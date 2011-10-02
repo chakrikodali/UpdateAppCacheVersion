@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<project name="UpdateAppCacheVersion" basedir="." default="jar">
+	
+	<property name="src.dir" value="src"></property>
+	<property name="build.dir" value="build"></property>
+	
+	<target name="clean">
+		<delete dir="${build.dir}"></delete>
+	</target>
+	
+	<target name="compile">
+		<echo> In compile</echo>
+
+		<javac srcdir="${src.dir}" destdir="." debug="true" target="1.5"></javac>
+	</target>
+	
+	<target name="jar" depends="clean, compile">
+		<jar destfile="${ant.project.name}.jar" basedir="." includes="**/*.class">
+			<manifest>
+				<attribute name="Main-Class" value="packit.UpdateAppCacheVersion"/>
+			</manifest>
+		</jar>
+	</target>
+	
+</project>
