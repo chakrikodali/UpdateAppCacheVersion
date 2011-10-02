@@ -1,0 +1,4 @@
+HTML5 application cache needs a manifest file which holds info about files to cache
+on the browser. Changes to this file only triggers an application cache updateready.
+
+This jar when executed will add the the size of the js file as the version number.
